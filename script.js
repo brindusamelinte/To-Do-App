@@ -8,7 +8,7 @@ let localStorageTasks = JSON.parse(localStorage.getItem('taskName'));
 
 window.addEventListener('load', event => {
     event.preventDefault();
-
+    
     localStorageTasks.forEach(task => {
         const groupDiv = document.createElement('div');
         groupDiv.setAttribute('class', 'input-group mb-2');
@@ -35,7 +35,7 @@ window.addEventListener('load', event => {
         groupDiv.appendChild(checkboxDiv);
         groupDiv.appendChild(taskInput);
 
-        $taskList.appendChild(groupDiv);  
+        $taskList.appendChild(groupDiv);
     }); 
 
     tasksArray = localStorageTasks;
@@ -75,15 +75,26 @@ $taskButton.addEventListener('click', event => {
     $taskList.appendChild(groupDiv);
 
     tasksArray.push(taskNameValue);
-
+    
     localStorage.setItem(`taskName`, JSON.stringify(tasksArray));
 
     $taskName.value = ''
 
     checkboxInput.addEventListener('click', event => {
         event.preventDefault();
-        groupDiv.setAttribute('class', 'd-none');   
+
+        let taskRemoved = groupDiv.lastElementChild.value;
+        let taskRemovedIndex = tasksArray.indexOf(taskRemoved); 
+      
+        if(taskRemovedIndex !== -1) {
+            tasksArray.splice(taskRemovedIndex, 1);
+        }
+
+        localStorage.setItem(`taskName`, JSON.stringify(tasksArray));
+
+        groupDiv.setAttribute('class', 'd-none'); 
     });
+
 });
 
 
