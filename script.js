@@ -36,6 +36,21 @@ window.addEventListener('load', event => {
         groupDiv.appendChild(taskInput);
 
         $taskList.appendChild(groupDiv);
+
+        checkboxInput.addEventListener('click', event => {
+            event.preventDefault();
+    
+            let taskRemoved = groupDiv.lastElementChild.value;
+            let taskRemovedIndex = tasksArray.indexOf(taskRemoved); 
+          
+            if(taskRemovedIndex !== -1) {
+                tasksArray.splice(taskRemovedIndex, 1);
+            }
+    
+            localStorage.setItem(`taskName`, JSON.stringify(tasksArray));
+    
+            groupDiv.setAttribute('class', 'd-none'); 
+        });
     }); 
 
     tasksArray = localStorageTasks;
