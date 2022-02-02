@@ -62,6 +62,13 @@ window.addEventListener('load', event => {
 });
 
 
+$taskName.addEventListener('keyup', event => {
+    if(event.keyCode === 13) {
+        event.preventDefault();
+        $taskButton.click();
+    }
+});
+
 $taskButton.addEventListener('click', event => {
     event.preventDefault();
 
