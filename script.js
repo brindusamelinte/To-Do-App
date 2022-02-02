@@ -2,9 +2,14 @@
 const $taskName = document.querySelector('#task-name');
 const $taskButton = document.querySelector('#button-addtask');
 const $taskList = document.querySelector('#task-list');
+const $tasksLabel = document.querySelector('#tasks-label');
 
 let tasksArray = [];
 let localStorageTasks = JSON.parse(localStorage.getItem('taskName'));
+
+if(localStorageTasks.length === 0) {
+    $tasksLabel.innerText = 'There is nothing to do for the moment.';
+}
 
 window.addEventListener('load', event => {
     event.preventDefault();
