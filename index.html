@@ -13,22 +13,31 @@
 <body>
 
     <div class="container d-flex flex-column align-items-center">
-        <div class="w-50 m-5 p-4 bg-secondary text-white">
-            <form action="#">
-                <h1 class="pb-2 text-center text-dark border-bottom border-dark">TO DO APP</h1>
-                <div class="pt-4">
-                    <label class="mb-2 fs-5 d-block form-label" for="task-name">Enter a new task you wish to add to your list:</label>
-                    <div class="input-group">
-                        <input id="task-name" class="w-75 mb-4 p-2 form-control" type="text" name="task-name" value="" placeholder="Check the email from the Travel Agency" aria-label="Check the email from the Travel Agency" aria-describedby="button-addtask"/>
-                        <button id="button-addtask" class="mb-4 p-2 btn btn-dark " type="button">Add Task</button>
+        <!-- <div class="w-75 m-5 p-4 bg-success text-white"> -->
+            <form action="#" class="w-75">
+                <div class="my-5 p-4 bg-secondary text-white">
+                    <h1 class="pb-2 text-center text-dark border-bottom border-dark">TO DO APP</h1>
+                    <div class="pt-4">
+                        <label class="mb-2 fs-5 d-block form-label" for="task-name">Enter a new task you wish to add to your list:</label>
+                        <div class="input-group">
+                            <input id="task-name" class="w-75 mb-4 p-2 form-control" type="text" name="task-name" value="" placeholder="Check the email from the Travel Agency" aria-label="Check the email from the Travel Agency" aria-describedby="button-addtask"/>
+                            <button id="button-addtask" class="mb-4 p-2 btn btn-dark " type="button">Add Task</button>
+                        </div>
                     </div>
                 </div>
-                <div class="pt-4">
-                    <label id="tasks-label" class="mb-2 fs-5 d-block form-label">My Tasks:</label>
-                    <div id="task-list" class="mb-4 d-flex flex-column"></div>
+               
+                <div class="p-4 bg-secondary text-white d-flex">
+                    <div class="w-50 pt-4 pe-3">
+                        <label id="tasks-label" class="mb-2 fs-5 d-block form-label">My Tasks:</label>
+                        <div id="task-list" class="mb-4 d-flex flex-column"></div>
+                    </div>
+                    <div class="w-50 pt-4">
+                        <label id="tasks-done-label" class="mb-2 fs-5 d-block form-label">Tasks Done:</label>
+                        <div id="task-done-list" class="mb-4 d-flex flex-column"></div>
+                    </div>
                 </div>
             </form>
-        </div>
+        <!-- </div> -->
     </div>
     
 
